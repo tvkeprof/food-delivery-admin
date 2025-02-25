@@ -14,7 +14,7 @@ export default function Home() {
     getData();
   }, []);
 
-  const value = "sda sda sda sda";
+  const value = "";
   useEffect(() => {
     const postData = async () => {
       const response = await axios.post("http://localhost:9999", {
@@ -23,6 +23,16 @@ export default function Home() {
       console.log(response);
     };
     postData();
+  }, []);
+  const putValue = "putted data";
+  useEffect(() => {
+    const putData = async () => {
+      const response = await axios.put("http://localhost:9999", {
+        putValue: JSON.stringify(putValue),
+      });
+      console.log(response);
+    };
+    putData();
   }, []);
 
   return (
